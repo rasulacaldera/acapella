@@ -1,4 +1,7 @@
+@import "../../../styles/mixins.scss";
+
 .header{
+    @include layout-padding;
     background-color: tomato;
     height: 200px;
 }
