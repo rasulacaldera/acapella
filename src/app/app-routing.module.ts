@@ -5,9 +5,14 @@ import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {
-    path: "home",
+    path: "",
     component: LayoutComponent,
-    loadChildren: './home/home.module#HomeModule'
+    children: [
+      {
+        path: "home",
+        loadChildren: './home/home.module#HomeModule'
+      }
+    ]
   },
   { path: "**", redirectTo: "", pathMatch: "full" }
 ];
