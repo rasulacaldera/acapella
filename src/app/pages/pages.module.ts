@@ -5,16 +5,10 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SharedModule } from '../shared/shared.module';
+import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    AboutUsComponent
-  ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule,
-    SharedModule
-  ]
+  declarations: [HomeComponent, AboutUsComponent, HomeCarouselComponent],
+  imports: [CommonModule, PagesRoutingModule, SharedModule]
 })
-export class PagesModule { }
+export class PagesModule {}

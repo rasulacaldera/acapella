@@ -1,13 +1,13 @@
-@import "../../styles/mixins.scss";
+@import '../../styles/mixins.scss';
 
-.layout{
-    height: 100vh;
-    background-color: wheat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.layout {
+  height: 100%;
+  background-color: wheat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.body{
-    @include layout-padding;
+.body {
+  @include layout-padding;
 }
