@@ -11,11 +11,13 @@ import { DonateComponent } from './donate/donate.component';
 import { BuyComponent } from './buy/buy.component';
 import { WhoAreWeComponent } from './home/who-are-we/who-are-we.component';
 import { LatestBlogsComponent } from './home/latest-blogs/latest-blogs.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     AboutUsComponent,
+    ContactUsComponent,
     HomeCarouselComponent,
     ContributeBtnPanelComponent,
     DonateComponent,
@@ -25,4 +27,4 @@ import { LatestBlogsComponent } from './home/latest-blogs/latest-blogs.component
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule]
 })
-export class PagesModule {}
+export class PagesModule { }
