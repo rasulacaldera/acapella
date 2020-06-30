@@ -9,6 +9,7 @@ import { HomeCarouselComponent } from './home/home-carousel/home-carousel.compon
 import { ContributeBtnPanelComponent } from './home/contribute-btn-panel/contribute-btn-panel.component';
 import { DonateComponent } from './donate/donate.component';
 import { BuyComponent } from './buy/buy.component';
+import { WhoAreWeComponent } from './home/who-are-we/who-are-we.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BuyComponent } from './buy/buy.component';
     HomeCarouselComponent,
     ContributeBtnPanelComponent,
     DonateComponent,
-    BuyComponent
+    BuyComponent,
+    WhoAreWeComponent
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule]
 })
