@@ -7,13 +7,17 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SharedModule } from '../shared/shared.module';
 import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
 import { ContributeBtnPanelComponent } from './home/contribute-btn-panel/contribute-btn-panel.component';
+import { DonateComponent } from './donate/donate.component';
+import { BuyComponent } from './buy/buy.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     AboutUsComponent,
     HomeCarouselComponent,
-    ContributeBtnPanelComponent
+    ContributeBtnPanelComponent,
+    DonateComponent,
+    BuyComponent
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule]
 })
