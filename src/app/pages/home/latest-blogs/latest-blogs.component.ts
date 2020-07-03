@@ -29,7 +29,6 @@ export class LatestBlogsComponent implements OnInit {
   }
 
   getImageSrc(blog) {
-    console.log(blog);
     return blog.img;
   }
 }
