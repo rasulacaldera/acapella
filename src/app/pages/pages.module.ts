@@ -10,6 +10,7 @@ import { ContributeBtnPanelComponent } from './home/contribute-btn-panel/contrib
 import { DonateComponent } from './donate/donate.component';
 import { BuyComponent } from './buy/buy.component';
 import { WhoAreWeComponent } from './home/who-are-we/who-are-we.component';
+import { LatestBlogsComponent } from './home/latest-blogs/latest-blogs.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WhoAreWeComponent } from './home/who-are-we/who-are-we.component';
     ContributeBtnPanelComponent,
     DonateComponent,
     BuyComponent,
-    WhoAreWeComponent
+    WhoAreWeComponent,
+    LatestBlogsComponent
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule]
 })
