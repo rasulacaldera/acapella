@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,10 +8,11 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent implements OnInit {
-  constructor() {}
+  constructor(private toastr: ToastrService) {}
 
   ngOnInit() {}
-  public sendEmail(e: Event) {
+
+  sendEmail(e: Event) {
     e.preventDefault();
 
     emailjs
@@ -23,6 +25,7 @@ export class ContactUsComponent implements OnInit {
       .then(
         (result: EmailJSResponseStatus) => {
           console.log(result.text);
+          this.toastr.success('Email sent');
         },
         error => {
           console.log(error.text);
