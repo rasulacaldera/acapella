@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-contact-us',
+  selector: 'contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
@@ -22,7 +22,6 @@ export class ContactUsComponent implements OnInit {
 
   sendEmail(e: Event) {
     e.preventDefault();
-
     emailjs
       .sendForm(
         'gmail',
