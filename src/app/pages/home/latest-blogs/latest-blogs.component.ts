@@ -16,10 +16,6 @@ export class LatestBlogsComponent implements OnInit {
       title: 'Blog Title',
       post:
         'blog text blog text blog text blog text blog text blog text blog text blog text blog text blog text ' +
-        'blog text blog text blog text blog text blog text blog text blog text blog text blog text blog text ' +
-        'blog text blog text blog text blog text blog text blog text blog text blog text blog text blog text ' +
-        'blog text blog text blog text blog text blog text blog text blog text blog text blog text blog text ' +
-        'blog text blog text blog text blog text blog text blog text blog text blog text blog text blog text ' +
         'blog text blog text blog text blog text blog text blog text blog text blog text blog text blog text '
     };
 
