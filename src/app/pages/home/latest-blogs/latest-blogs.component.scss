@@ -1,9 +1,13 @@
+.recent-causes {
+  text-align: center;
+}
+
 .blog-posts {
   display: flex;
+  justify-content: space-between;
 }
 
 .blog-post {
   border: 1px solid;
-  margin-right: 5px;
   padding: 10px;
 }
