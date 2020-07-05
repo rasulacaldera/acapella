@@ -1,20 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-contact-us',
+  selector: 'contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent implements OnInit {
+  profileForm: FormGroup;
   constructor(private toastr: ToastrService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.profileForm = new FormGroup({
+      name: new FormControl(''),
+      email: new FormControl(''),
+      message: new FormControl('')
+    });
+  }
 
   sendEmail(e: Event) {
     e.preventDefault();
-
     emailjs
       .sendForm(
         'gmail',
@@ -24,11 +31,11 @@ export class ContactUsComponent implements OnInit {
       )
       .then(
         (result: EmailJSResponseStatus) => {
-          console.log(result.text);
           this.toastr.success('Email sent');
+          this.profileForm.reset();
         },
         error => {
-          console.log(error.text);
+          this.toastr.error('Unable to send email');
         }
       );
   }
