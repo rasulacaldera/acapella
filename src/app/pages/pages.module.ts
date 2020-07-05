@@ -13,6 +13,7 @@ import { WhoAreWeComponent } from './home/who-are-we/who-are-we.component';
 import { LatestBlogsComponent } from './home/latest-blogs/latest-blogs.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RecentPhotosComponent } from './home/recent-photos/recent-photos.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     DonateComponent,
     BuyComponent,
     WhoAreWeComponent,
-    LatestBlogsComponent
+    LatestBlogsComponent,
+    RecentPhotosComponent
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule, ReactiveFormsModule]
 })
-export class PagesModule {}
+export class PagesModule { }

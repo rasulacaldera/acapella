@@ -4,10 +4,10 @@
 
 .blog-posts {
   display: flex;
+  justify-content: space-between;
 }
 
 .blog-post {
   border: 1px solid;
-  margin-right: 15px;
   padding: 10px;
 }

@@ -1,0 +1,16 @@
+.recent-images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 25%;
+  border: 1px solid;
+  object-fit: scale-down;
+  :hover {
+    transform: scale(1.5);
+    transition: transform 1s;
+  }
+}
