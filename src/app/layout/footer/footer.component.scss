@@ -1,4 +1,13 @@
-.footer{
-    background-color: yellowgreen;
-    height: 150px;
+.footer {
+  background-color: #d5d5ff;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-size: 1.5rem;
+    + i {
+      margin-left: 1rem;
+    }
+  }
 }

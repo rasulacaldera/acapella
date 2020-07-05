@@ -1,10 +1,9 @@
-@import "../../../styles/mixins.scss";
+@import '../../../styles/mixins.scss';
 
-.header{
-    @include layout-padding;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: tomato;
-    height: 200px;
+.header {
+  @include layout-padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lavender;
 }
