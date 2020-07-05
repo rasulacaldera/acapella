@@ -3,10 +3,14 @@
     <h1>Our Recent Causes</h1>
   </div>
   <div class="blog-posts">
-    <div *ngFor="let blogPost of blogPosts" class="blog-post">
-      <img scr="getImageSrc(blogPost)" width="370" height="240" />
-      <h4>{{ blogPost.title }}</h4>
-      <p>{{ blogPost.post }}</p>
+    <div class="row">
+      <div class="col" *ngFor="let blogPost of blogPosts">
+        <div class="blog-post">
+          <img src="https://picsum.photos/370/240" width="370" height="240" />
+          <h4>{{ blogPost.title }}</h4>
+          <p>{{ blogPost.post }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

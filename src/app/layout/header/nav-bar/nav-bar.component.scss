@@ -1,10 +1,20 @@
-.navbar{
-    background-color: grey;
-    justify-content: center;
-    width: fit-content;
-    height: fit-content;
+.navbar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    width: 70px;
+    object-fit: contain;
+  }
 }
 
-.nav-link{
-    padding: 1.5rem 2rem;
+.navbar {
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.nav-link {
+  padding: 1.5rem 2rem;
+  color: #a3a3ff;
 }
