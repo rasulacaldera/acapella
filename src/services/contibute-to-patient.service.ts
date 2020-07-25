@@ -12,6 +12,6 @@ export class ContibuteToPatientService {
   constructor(private http: HttpClientService) {}
 
   getAllActivePatientContributions() {
-    return this.http.get(this.CONTRIBUTION_SERVICE);
+    return this.http.get(this.CONTRIBUTION_SERVICE + '?active_eq=true');
   }
 }

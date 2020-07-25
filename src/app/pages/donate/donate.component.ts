@@ -10,10 +10,13 @@ export class DonateComponent implements OnInit {
   constructor(private contibuteToPatientService: ContibuteToPatientService) {}
 
   ngOnInit() {
-    // this.contibuteToPatientService.getAllActivePatientContributions().subscribe(res => {
-    //   console.log(res)
-    // }, error => {
-    //   console.error(error)
-    // })
+    this.contibuteToPatientService.getAllActivePatientContributions().subscribe(
+      res => {
+        console.log(res);
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 }
