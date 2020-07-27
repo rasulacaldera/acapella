@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContibuteToPatientService } from 'src/services/contibute-to-patient.service';
 import { SERVER } from 'src/environments/environment';
 import { ToastrService } from 'ngx-toastr';
+import marked from 'marked';
 
 @Component({
   selector: 'app-donate',
@@ -30,5 +31,9 @@ export class DonateComponent implements OnInit {
 
   openFile(document) {
     window.open(SERVER + document.url, '_blank');
+  }
+
+  getInnerHTML({ description }) {
+    return marked.setOptions({}).parse(description);
   }
 }

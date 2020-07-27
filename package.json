@@ -24,6 +24,7 @@
     "bootstrap": "^4.5.0",
     "core-js": "^2.5.4",
     "emailjs-com": "^2.4.1",
+    "marked": "^1.1.1",
     "ngx-bootstrap": "^5.6.1",
     "ngx-toastr": "^7.1.0",
     "rxjs": "~6.3.3",

@@ -3,7 +3,7 @@
     <div class="donate-card-info">
       <div class="donate-card-title">{{ contribution.title }}</div>
       <div class="donate-card-description">
-        <p [innerText]="contribution.description"></p>
+        <p [innerHtml]="getInnerHTML(contribution)"></p>
       </div>
       <div
         *ngFor="let attachment of contribution.attachments"
