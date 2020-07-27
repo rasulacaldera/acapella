@@ -36,4 +36,8 @@ export class DonateComponent implements OnInit {
   getInnerHTML({ description }) {
     return marked.setOptions({}).parse(description);
   }
+
+  getImageUrl(image) {
+    return SERVER + image.formats.large.url;
+  }
 }
