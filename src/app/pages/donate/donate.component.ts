@@ -25,8 +25,6 @@ export class DonateComponent implements OnInit {
   }
 
   openFile(document) {
-    console.log('Clicked');
-
     window.open(SERVER + document.url, '_blank');
   }
 }
