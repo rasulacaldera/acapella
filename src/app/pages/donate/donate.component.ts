@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContibuteToPatientService } from 'src/services/contibute-to-patient.service';
+import { SERVER } from 'src/environments/environment';
 
 @Component({
   selector: 'app-donate',
@@ -21,5 +22,11 @@ export class DonateComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+  openFile(document) {
+    console.log('Clicked');
+
+    window.open(SERVER + document.url, '_blank');
   }
 }

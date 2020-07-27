@@ -5,10 +5,13 @@
       <div class="donate-card-description">
         <p [innerText]="contribution.description"></p>
       </div>
-      <div class="donate-card-document-wrapper">
-        <div class="donate-card-document">
-          <i class="far fa-file-alt"></i> Medical Certificate.docx
-          <i class="far fa-file-alt"></i> Estimated Costs.docx
+      <div
+        *ngFor="let attachment of contribution.attachments"
+        class="donate-card-document-wrapper"
+      >
+        <div (click)="openFile(attachment)" class="donate-card-document">
+          <i class="far fa-file-alt"></i>
+          {{ attachment.caption }}
         </div>
       </div>
       <div
