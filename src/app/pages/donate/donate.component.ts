@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContibuteToPatientService } from 'src/services/contibute-to-patient.service';
 import { SERVER } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-donate',
@@ -10,7 +11,10 @@ import { SERVER } from 'src/environments/environment';
 export class DonateComponent implements OnInit {
   patientContribution: any = [];
 
-  constructor(private contibuteToPatientService: ContibuteToPatientService) {}
+  constructor(
+    private contibuteToPatientService: ContibuteToPatientService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.contibuteToPatientService.getAllActivePatientContributions().subscribe(
@@ -19,7 +23,7 @@ export class DonateComponent implements OnInit {
         console.log(this.patientContribution);
       },
       error => {
-        console.error(error);
+        this.toastr.error('Error fetching Contributions');
       }
     );
   }
