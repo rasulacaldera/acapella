@@ -42,6 +42,10 @@
     }
   }
 
+  &-bank-accounts {
+    width: 100%;
+  }
+
   &-bank {
     display: inline-block;
     background-color: #333333;
@@ -49,6 +53,7 @@
     font-weight: 300;
     padding: 0.5rem;
     border-radius: 0.25rem;
+    margin-right: 0.5rem;
   }
 
   + .donate-card {

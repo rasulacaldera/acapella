@@ -14,24 +14,26 @@
           {{ attachment.caption }}
         </div>
       </div>
-      <div
-        *ngFor="let account of contribution.patient_accounts"
-        class="donate-card-bank"
-      >
-        <div class="donate-card-bank_name">Bank: {{ account.bank_name }}</div>
-        <div class="donate-card-bank_acc-name">
-          Name: {{ account.account_name }}
+      <div class="donate-card-bank-accounts">
+        <div
+          *ngFor="let account of contribution.patient_accounts"
+          class="donate-card-bank"
+        >
+          <div class="donate-card-bank_name">Bank: {{ account.bank_name }}</div>
+          <div class="donate-card-bank_acc-name">
+            Name: {{ account.account_name }}
+          </div>
+          <div class="donate-card-bank_acc">
+            Account No: {{ account.account_number }}
+          </div>
+          <div class="donate-card-bank_branch">
+            Branch: {{ account.account_branch }}
+          </div>
+          <div class="donate-card-bank_branch">
+            Swift Code: {{ account.swift_code }}
+          </div>
+          <!-- TODO - Change class in SWIFT Code -->
         </div>
-        <div class="donate-card-bank_acc">
-          Account No: {{ account.account_number }}
-        </div>
-        <div class="donate-card-bank_branch">
-          Branch: {{ account.account_branch }}
-        </div>
-        <div class="donate-card-bank_branch">
-          Swift Code: {{ account.swift_code }}
-        </div>
-        <!-- TODO - Change class in SWIFT Code -->
       </div>
     </div>
     <div class="donate-card-image">
