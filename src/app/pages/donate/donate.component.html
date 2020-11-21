@@ -2,7 +2,7 @@
   <div
     *ngFor="let contribution of patientContribution"
     class="donate-card"
-    (click)="onMouseOver(contribution)"
+    (click)="onClick(contribution)"
   >
     <div class="donate-card-info">
       <div class="donate-card-title">{{ contribution.title }}</div>

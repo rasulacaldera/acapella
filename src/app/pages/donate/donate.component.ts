@@ -55,8 +55,7 @@ export class DonateComponent implements OnInit {
     return description.substring(0, 750).trimRight() + '...';
   }
 
-  onMouseOver(contribution) {
-    console.log('onMouseOver');
+  onClick(contribution) {
     contribution.collapased = !contribution.collapased;
   }
 }
