@@ -21,7 +21,14 @@ export class DonateComponent implements OnInit {
     this.contibuteToPatientService.getAllActivePatientContributions().subscribe(
       res => {
         this.patientContribution = res;
-        console.log(this.patientContribution);
+        this.patientContribution = this.patientContribution.map(
+          contribution => {
+            return {
+              ...contribution,
+              collapased: true
+            };
+          }
+        );
       },
       error => {
         this.toastr.error('Error fetching Contributions');
@@ -33,11 +40,23 @@ export class DonateComponent implements OnInit {
     window.open(SERVER + document.url, '_blank');
   }
 
-  getInnerHTML({ description }) {
+  getInnerHTML({ collapased, description }) {
+    description = collapased
+      ? this.getTrimmedDescription(description)
+      : description;
     return marked.setOptions({}).parse(description);
   }
 
   getImageUrl(image) {
     return SERVER + image.url;
+  }
+
+  getTrimmedDescription(description: string) {
+    return description.substring(0, 750).trimRight() + '...';
+  }
+
+  onMouseOver(contribution) {
+    console.log('onMouseOver');
+    contribution.collapased = !contribution.collapased;
   }
 }

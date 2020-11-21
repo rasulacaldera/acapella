@@ -1,5 +1,9 @@
 <div class="container py-4">
-  <div *ngFor="let contribution of patientContribution" class="donate-card">
+  <div
+    *ngFor="let contribution of patientContribution"
+    class="donate-card"
+    (click)="onMouseOver(contribution)"
+  >
     <div class="donate-card-info">
       <div class="donate-card-title">{{ contribution.title }}</div>
       <div class="donate-card-description">

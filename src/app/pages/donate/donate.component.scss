@@ -3,14 +3,16 @@
   flex-wrap: wrap;
   background-color: #050505;
   color: #fff;
+  border-radius: 20px;
   &-info {
-    flex: 1 1 50%;
+    flex: 1 1 65%;
     padding: 1rem;
   }
   &-image {
-    flex: 0 1 50%;
+    flex: 0 1 35%;
     img {
-      width: 100%;
+      // width: 100%;
+      max-width: 350px;
     }
   }
   &-title {
@@ -22,6 +24,7 @@
     font-size: 0.875rem;
     line-height: 1.125rem;
     font-weight: 300;
+    text-align: justify;
   }
 
   &-document-wrapper {
