@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-under-construction',
@@ -12,6 +13,8 @@ export class UnderConstructionComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    !environment.production ? (window.location.href = '/home') : null;
+
     setInterval(() => {
       // Get todays date and time
       var now = new Date().getTime();
