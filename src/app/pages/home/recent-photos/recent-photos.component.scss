@@ -5,13 +5,13 @@
 }
 
 .image-container {
-  width: 25%;
+  width: 33%;
   object-fit: scale-down;
   img {
     width: 100%;
   }
   :hover {
-    transform: scale(1.04);
+    transform: scale(1.4);
     transition: transform 0.3s;
   }
 }
