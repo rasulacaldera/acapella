@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { VideoLibraryService } from 'src/services/video-library.service';
 
 @Component({
   selector: 'video-library',
@@ -7,23 +8,20 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./video-library.component.scss']
 })
 export class VideoLibraryComponent implements OnInit {
-  videoSources: any = [
-    'https://www.youtube.com/embed/7GjOOyBoELw',
-    'https://www.youtube.com/embed/7GjOOyBoELw',
-    'https://www.youtube.com/embed/7GjOOyBoELw',
-    'https://www.youtube.com/embed/7GjOOyBoELw',
-    'https://www.youtube.com/embed/7GjOOyBoELw',
-    'https://www.youtube.com/embed/7GjOOyBoELw',
-    'https://www.youtube.com/embed/7GjOOyBoELw',
-    'https://www.youtube.com/embed/7GjOOyBoELw',
-    'https://www.youtube.com/embed/7GjOOyBoELw'
-  ];
+  videoSources: any = [];
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private videoLibraryService: VideoLibraryService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.videoLibraryService.getLatestVideos(9).subscribe(res => {
+      this.videoSources = res;
+    });
+  }
 
-  getSafeUrl(url) {
+  getSafeUrl({ url }) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
