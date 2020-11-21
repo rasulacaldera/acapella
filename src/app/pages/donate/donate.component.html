@@ -1,54 +1,47 @@
 <div class="container py-4">
-  <div class="donate-card">
+  <div *ngFor="let contribution of patientContribution" class="donate-card">
     <div class="donate-card-info">
-      <div class="donate-card-title">Jane Doh</div>
+      <div class="donate-card-title">{{ contribution.title }}</div>
       <div class="donate-card-description">
-        <p>
-          Aenean lacinia bibendum nulla sed leo posuere erat a ante venenatis
-          dapibus posuere velit aliquet. Donec ullamcorper metus auctor fringi.
-          Nullam quis risus.
-        </p>
+        <p [innerHtml]="getInnerHTML(contribution)"></p>
       </div>
-      <div class="donate-card-document-wrapper">
-        <div class="donate-card-document">
-          <i class="far fa-file-alt"></i> Medical Certificate.docx
+      <div
+        *ngFor="let attachment of contribution.attachments"
+        class="donate-card-document-wrapper"
+      >
+        <div (click)="openFile(attachment)" class="donate-card-document">
+          <i class="far fa-file-alt"></i>
+          {{ attachment.caption }}
         </div>
       </div>
-      <div class="donate-card-bank">
-        <div class="donate-card-bank_name">Sampath Bank</div>
-        <div class="donate-card-bank_acc-name">Jane Doh</div>
-        <div class="donate-card-bank_acc">134810249811341</div>
-        <div class="donate-card-bank_branch">Colombo 04</div>
+      <div class="donate-card-bank-accounts">
+        <div
+          *ngFor="let account of contribution.patient_accounts"
+          class="donate-card-bank"
+        >
+          <div class="donate-card-bank_name">Bank: {{ account.bank_name }}</div>
+          <div class="donate-card-bank_acc-name">
+            Name: {{ account.account_name }}
+          </div>
+          <div class="donate-card-bank_acc">
+            Account No: {{ account.account_number }}
+          </div>
+          <div class="donate-card-bank_branch">
+            Branch: {{ account.account_branch }}
+          </div>
+          <div class="donate-card-bank_branch">
+            Swift Code: {{ account.swift_code }}
+          </div>
+          <!-- TODO - Change class in SWIFT Code -->
+        </div>
       </div>
     </div>
     <div class="donate-card-image">
-      <img src="../../../assets/images/d1.jpg" alt="donate image" />
+      <img [src]="getImageUrl(contribution.image)" alt="donate image" />
     </div>
   </div>
-  <div class="donate-card">
-    <div class="donate-card-info">
-      <div class="donate-card-title">Jane Doh</div>
-      <div class="donate-card-description">
-        <p>
-          Aenean lacinia bibendum nulla sed leo posuere erat a ante venenatis
-          dapibus posuere velit aliquet. Donec ullamcorper metus auctor fringi.
-          Nullam quis risus.
-        </p>
-      </div>
-      <div class="donate-card-document-wrapper">
-        <div class="donate-card-document">
-          <i class="far fa-file-alt"></i> Medical Certificate.docx
-        </div>
-      </div>
-      <div class="donate-card-bank">
-        <div class="donate-card-bank_name">Sampath Bank</div>
-        <div class="donate-card-bank_acc-name">Jane Doh</div>
-        <div class="donate-card-bank_acc">134810249811341</div>
-        <div class="donate-card-bank_branch">Colombo 04</div>
-      </div>
-    </div>
-    <div class="donate-card-image">
-      <img src="../../../assets/images/d1.jpg" alt="donate image" />
-    </div>
-  </div>
+</div>
+
+<div *ngIf="patientContribution.length == 0">
+  Looks like we dont have any patients in need of help
 </div>
