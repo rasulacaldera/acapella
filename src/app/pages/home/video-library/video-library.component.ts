@@ -18,6 +18,11 @@ export class VideoLibraryComponent implements OnInit {
   ngOnInit() {
     this.videoLibraryService.getLatestVideos(9).subscribe(res => {
       this.videoSources = res;
+      this.videoSources = this.videoSources.map(source => {
+        return {
+          url: source.url
+        };
+      });
     });
   }
 
