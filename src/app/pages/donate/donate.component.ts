@@ -51,7 +51,7 @@ export class DonateComponent implements OnInit {
     return SERVER + image.url;
   }
 
-  getTrimmedDescription(description: string) {
+  getTrimmedDescription(description) {
     return description.substring(0, 750).trimRight() + '...';
   }
 
