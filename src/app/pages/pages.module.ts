@@ -14,6 +14,7 @@ import { LatestBlogsComponent } from './home/latest-blogs/latest-blogs.component
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecentPhotosComponent } from './home/recent-photos/recent-photos.component';
+import { VideoLibraryComponent } from './home/video-library/video-library.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,9 @@ import { RecentPhotosComponent } from './home/recent-photos/recent-photos.compon
     BuyComponent,
     WhoAreWeComponent,
     LatestBlogsComponent,
-    RecentPhotosComponent
+    RecentPhotosComponent,
+    VideoLibraryComponent
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule, ReactiveFormsModule]
 })
-export class PagesModule { }
+export class PagesModule {}

@@ -1,0 +1,17 @@
+.recent-videos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.videos-container {
+  width: 33%;
+  object-fit: scale-down;
+  img {
+    width: 100%;
+  }
+  :hover {
+    transform: scale(1.4);
+    transition: transform 0.3s;
+  }
+}
