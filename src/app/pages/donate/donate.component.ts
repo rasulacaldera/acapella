@@ -21,14 +21,6 @@ export class DonateComponent implements OnInit {
     this.contibuteToPatientService.getAllActivePatientContributions().subscribe(
       res => {
         this.patientContribution = res;
-        this.patientContribution = this.patientContribution.map(
-          contribution => {
-            return {
-              ...contribution,
-              collapased: true
-            };
-          }
-        );
       },
       error => {
         this.toastr.error('Error fetching Contributions');

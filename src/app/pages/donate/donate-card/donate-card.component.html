@@ -1,17 +1,8 @@
-<div class="donate-card" (click)="onClick(contribution)">
+<div class="donate-card" (click)="onClick()">
   <div class="donate-card-info">
     <div class="donate-card-title">{{ contribution.title }}</div>
     <div class="donate-card-description">
-      <p [innerHtml]="getInnerHTML(contribution)"></p>
-    </div>
-    <div
-      *ngFor="let attachment of contribution.attachments"
-      class="donate-card-document-wrapper"
-    >
-      <div (click)="openFile(attachment)" class="donate-card-document">
-        <i class="far fa-file-alt"></i>
-        {{ attachment.caption }}
-      </div>
+      <p [innerHtml]="getInnerHTML()"></p>
     </div>
     <div class="donate-card-bank-accounts">
       <div
@@ -36,6 +27,14 @@
     </div>
   </div>
   <div class="donate-card-image">
-    <img [src]="getImageUrl(contribution.image)" alt="donate image" />
+    <img [src]="getImageUrl()" alt="donate image" />
+    <div class="donate-card-document-wrapper">
+      <div *ngFor="let attachment of contribution.attachments">
+        <div (click)="openFile(attachment)" class="donate-card-document">
+          <i class="far fa-file-alt"></i>
+          {{ attachment.caption ? attachment.caption : attachment.name }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>

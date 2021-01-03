@@ -18,22 +18,15 @@ export class DonateCardComponent implements OnInit {
     window.open(SERVER + document.url, '_blank');
   }
 
-  getInnerHTML({ collapased, description }) {
-    description = collapased
-      ? this.getTrimmedDescription(description)
-      : description;
-    return marked.setOptions({}).parse(description);
+  getInnerHTML() {
+    return marked.setOptions({}).parse(this.contribution.description);
   }
 
-  getImageUrl(image) {
-    return SERVER + image.url;
+  getImageUrl() {
+    return SERVER + this.contribution.image.url;
   }
 
-  getTrimmedDescription(description) {
-    return description.substring(0, 750).trimRight() + '...';
-  }
-
-  onClick(contribution) {
-    contribution.collapased = !contribution.collapased;
+  onClick() {
+    // contribution.collapased = !contribution.collapased;
   }
 }
