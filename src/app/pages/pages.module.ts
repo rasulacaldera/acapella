@@ -14,6 +14,7 @@ import { LatestBlogsComponent } from './home/latest-blogs/latest-blogs.component
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VideoLibraryComponent } from './home/video-library/video-library.component';
+import { DonateCardComponent } from './donate/donate-card/donate-card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { VideoLibraryComponent } from './home/video-library/video-library.compon
     BuyComponent,
     WhoAreWeComponent,
     LatestBlogsComponent,
-    VideoLibraryComponent
+    VideoLibraryComponent,
+    DonateCardComponent
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule, ReactiveFormsModule]
 })

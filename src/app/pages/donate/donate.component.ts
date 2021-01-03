@@ -35,27 +35,4 @@ export class DonateComponent implements OnInit {
       }
     );
   }
-
-  openFile(document) {
-    window.open(SERVER + document.url, '_blank');
-  }
-
-  getInnerHTML({ collapased, description }) {
-    description = collapased
-      ? this.getTrimmedDescription(description)
-      : description;
-    return marked.setOptions({}).parse(description);
-  }
-
-  getImageUrl(image) {
-    return SERVER + image.url;
-  }
-
-  getTrimmedDescription(description) {
-    return description.substring(0, 750).trimRight() + '...';
-  }
-
-  onClick(contribution) {
-    contribution.collapased = !contribution.collapased;
-  }
 }
