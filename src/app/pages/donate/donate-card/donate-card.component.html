@@ -39,7 +39,7 @@
     </div>
     <div class="donate-card-image">
       <img [src]="getImageUrl()" alt="donate image" />
-      <div class="progress">
+      <div *ngIf="!contribution.target_reached" class="progress">
         <div
           class="progress-bar progress-bar-success"
           role="progressbar"
