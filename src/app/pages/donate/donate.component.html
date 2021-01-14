@@ -1,4 +1,5 @@
-<div class="container py-4 donation-page">
+<loader *ngIf="loading"></loader>
+<div *ngIf="!loading" class="container py-4 donation-page">
   <div *ngFor="let contribution of patientContribution">
     <donate-card [contribution]="contribution"></donate-card>
   </div>

@@ -12,6 +12,7 @@ import marked from 'marked';
 })
 export class BlogComponent implements OnInit {
   blog: any = undefined;
+  loading: boolean = false;
 
   constructor(
     private toastr: ToastrService,
@@ -20,17 +21,24 @@ export class BlogComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      let id = params['id'];
-      this.blogService.getBlogById(id).subscribe(res => {
-        let processingBlog = res[0];
-        this.blog = {
-          title: processingBlog.title,
-          img: SERVER + processingBlog.images[0].url,
-          body: processingBlog.body
-        };
-      });
-    });
+    this.loading = true;
+    this.route.queryParams.subscribe(
+      params => {
+        let id = params['id'];
+        this.blogService.getBlogById(id).subscribe(res => {
+          let processingBlog = res[0];
+          this.blog = {
+            title: processingBlog.title,
+            img: SERVER + processingBlog.images[0].url,
+            body: processingBlog.body
+          };
+        });
+        this.loading = false;
+      },
+      error => {
+        this.loading = false;
+      }
+    );
   }
 
   getInnerHTML() {
