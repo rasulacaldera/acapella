@@ -13,4 +13,8 @@ export class BlogService {
   getLatestBlogs(limit) {
     return this.http.get(this.BLOG_SERVICE + '?_sort=id:DESC&_limit=' + limit);
   }
+
+  getBlogById(id) {
+    return this.http.get(this.BLOG_SERVICE + '?active_eq=true&id_eq=' + id);
+  }
 }
