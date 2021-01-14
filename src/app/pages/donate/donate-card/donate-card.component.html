@@ -1,0 +1,69 @@
+<a
+  [href]="getDonationUrl()"
+  (click)="onClick($event)"
+  class="donate-disable-anchor"
+>
+  <div class="donate-card">
+    <div *ngIf="contribution.target_reached" class="donate-card-target-reached">
+      TARGET REACHED
+    </div>
+    <div class="donate-card-info">
+      <div class="donate-card-title">{{ contribution.title }}</div>
+      <div class="donate-card-description">
+        <p [innerHtml]="getInnerHTML()"></p>
+      </div>
+      <div
+        *ngIf="!contribution.target_reached"
+        class="donate-card-bank-accounts"
+      >
+        <div
+          *ngFor="let account of contribution.patient_accounts"
+          class="donate-card-bank"
+        >
+          <div class="donate-card-bank_name">Bank: {{ account.bank_name }}</div>
+          <div class="donate-card-bank_acc-name">
+            Name: {{ account.account_name }}
+          </div>
+          <div class="donate-card-bank_acc">
+            Account No: {{ account.account_number }}
+          </div>
+          <div class="donate-card-bank_branch">
+            Branch: {{ account.account_branch }}
+          </div>
+          <div class="donate-card-bank_branch">
+            Swift Code: {{ account.swift_code }}
+          </div>
+          <!-- TODO - Change class in SWIFT Code -->
+        </div>
+      </div>
+    </div>
+    <div class="donate-card-image">
+      <img [src]="getImageUrl()" alt="donate image" />
+      <div *ngIf="!contribution.target_reached" class="progress">
+        <div
+          class="progress-bar progress-bar-success"
+          role="progressbar"
+          [ngStyle]="getDonationProgress()"
+        >
+          Target: {{ this.contribution.current_donations }} of
+          {{ this.contribution.target }}
+        </div>
+      </div>
+      <div class="donate-card-document-wrapper">
+        <div *ngFor="let attachment of contribution.attachments">
+          <div (click)="openFile(attachment)" class="donate-card-document">
+            <i class="far fa-file-alt"></i>
+            {{ attachment.caption ? attachment.caption : attachment.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      *ngIf="!contribution.target_reached"
+      href="/terms-and-conditions"
+      class="donate-card-tc"
+      (click)="navigate('/terms-and-conditions')"
+      >Terms and Conditions</a
+    >
+  </div>
+</a>
