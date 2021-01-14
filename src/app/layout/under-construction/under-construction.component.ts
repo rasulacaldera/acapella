@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./under-construction.component.scss']
 })
 export class UnderConstructionComponent implements OnInit {
-  countDownDate = new Date('Jan 1, 2021 00:00:00').getTime();
+  countDownDate = new Date('Feb 4, 2021 00:00:00').getTime();
   countDownDisplay = 'Calculating...';
 
   constructor() {}
