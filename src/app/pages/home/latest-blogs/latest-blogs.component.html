@@ -6,9 +6,9 @@
     <div class="row">
       <div class="col" *ngFor="let blogPost of blogPosts">
         <div class="blog-post">
-          <img src="https://picsum.photos/370/240" width="370" height="240" />
+          <img [src]="getImgUrl(blogPost)" width="370" height="240" />
           <h4>{{ blogPost.title }}</h4>
-          <p>{{ blogPost.post }}</p>
+          <p>{{ getSummaryText(blogPost) }}</p>
         </div>
       </div>
     </div>
