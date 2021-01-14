@@ -1,6 +1,9 @@
-<div *ngIf="!blog" class="blog-no-found">Blog not found</div>
-<div *ngIf="blog" class="blog">
-  <h2>{{ blog.title }}</h2>
-  <img [src]="blog.img" alt="donate image" />
-  <p class="blog-body" [innerHtml]="getInnerHTML()"></p>
+<loader *ngIf="loading"></loader>
+<div *ngIf="!loading">
+  <div *ngIf="!blog" class="blog-no-found">Blog not found</div>
+  <div *ngIf="blog" class="blog">
+    <h2>{{ blog.title }}</h2>
+    <img [src]="blog.img" alt="donate image" />
+    <p class="blog-body" [innerHtml]="getInnerHTML()"></p>
+  </div>
 </div>

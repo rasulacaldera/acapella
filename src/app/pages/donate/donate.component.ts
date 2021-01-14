@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DonateComponent implements OnInit {
   patientContribution: any = [];
+  loading: boolean = false;
 
   constructor(
     private contibuteToPatientService: ContibuteToPatientService,
@@ -20,6 +21,7 @@ export class DonateComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.loading = true;
     this.route.queryParams.subscribe(params => {
       let id = params['id'];
       id ? this.loadDonationById(id) : this.loadAllDonations();
@@ -51,6 +53,7 @@ export class DonateComponent implements OnInit {
       },
       error => {
         this.toastr.error('Error fetching Contributions');
+        this.loading = false;
       }
     );
   }
@@ -69,5 +72,6 @@ export class DonateComponent implements OnInit {
         donationUrl: '/donate?id=' + donation.id
       };
     });
+    this.loading = false;
   }
 }
