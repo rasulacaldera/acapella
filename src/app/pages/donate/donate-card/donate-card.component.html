@@ -49,7 +49,10 @@
           {{ this.contribution.target }}
         </div>
       </div>
-      <div class="donate-card-document-wrapper">
+      <div
+        *ngIf="!contribution.target_reached"
+        class="donate-card-document-wrapper"
+      >
         <div *ngFor="let attachment of contribution.attachments">
           <div (click)="openFile(attachment)" class="donate-card-document">
             <i class="far fa-file-alt"></i>
