@@ -15,17 +15,22 @@ export class LatestBlogsComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.blogService.getLatestBlogs(3).subscribe(res => {
-      this.blogPosts = res;
-      this.blogPosts = this.blogPosts.map(blog => {
-        return {
-          title: blog.title,
-          image: SERVER + blog.images[0].url,
-          blogUrl: '/blog?id=' + blog.id,
-          summary: blog.summary.trim().slice(0, 500) + '...'
-        };
-      });
-      this.loading = false;
-    });
+    this.blogService.getLatestBlogs(3).subscribe(
+      res => {
+        this.blogPosts = res;
+        this.blogPosts = this.blogPosts.map(blog => {
+          return {
+            title: blog.title,
+            image: SERVER + blog.images[0].url,
+            blogUrl: '/blog?id=' + blog.id,
+            summary: blog.summary.trim().slice(0, 500) + '...'
+          };
+        });
+        this.loading = false;
+      },
+      error => {
+        this.loading = false;
+      }
+    );
   }
 }
