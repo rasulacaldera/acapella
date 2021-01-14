@@ -1,40 +1,46 @@
-<div class="donate-card" (click)="onClick()">
-  <div class="donate-card-info">
-    <div class="donate-card-title">{{ contribution.title }}</div>
-    <div class="donate-card-description">
-      <p [innerHtml]="getInnerHTML()"></p>
-    </div>
-    <div class="donate-card-bank-accounts">
-      <div
-        *ngFor="let account of contribution.patient_accounts"
-        class="donate-card-bank"
-      >
-        <div class="donate-card-bank_name">Bank: {{ account.bank_name }}</div>
-        <div class="donate-card-bank_acc-name">
-          Name: {{ account.account_name }}
-        </div>
-        <div class="donate-card-bank_acc">
-          Account No: {{ account.account_number }}
-        </div>
-        <div class="donate-card-bank_branch">
-          Branch: {{ account.account_branch }}
-        </div>
-        <div class="donate-card-bank_branch">
-          Swift Code: {{ account.swift_code }}
-        </div>
-        <!-- TODO - Change class in SWIFT Code -->
+<a
+  [href]="getDonationUrl()"
+  (click)="onClick($event)"
+  class="donate-disable-anchor"
+>
+  <div class="donate-card">
+    <div class="donate-card-info">
+      <div class="donate-card-title">{{ contribution.title }}</div>
+      <div class="donate-card-description">
+        <p [innerHtml]="getInnerHTML()"></p>
       </div>
-    </div>
-  </div>
-  <div class="donate-card-image">
-    <img [src]="getImageUrl()" alt="donate image" />
-    <div class="donate-card-document-wrapper">
-      <div *ngFor="let attachment of contribution.attachments">
-        <div (click)="openFile(attachment)" class="donate-card-document">
-          <i class="far fa-file-alt"></i>
-          {{ attachment.caption ? attachment.caption : attachment.name }}
+      <div class="donate-card-bank-accounts">
+        <div
+          *ngFor="let account of contribution.patient_accounts"
+          class="donate-card-bank"
+        >
+          <div class="donate-card-bank_name">Bank: {{ account.bank_name }}</div>
+          <div class="donate-card-bank_acc-name">
+            Name: {{ account.account_name }}
+          </div>
+          <div class="donate-card-bank_acc">
+            Account No: {{ account.account_number }}
+          </div>
+          <div class="donate-card-bank_branch">
+            Branch: {{ account.account_branch }}
+          </div>
+          <div class="donate-card-bank_branch">
+            Swift Code: {{ account.swift_code }}
+          </div>
+          <!-- TODO - Change class in SWIFT Code -->
         </div>
       </div>
     </div>
+    <div class="donate-card-image">
+      <img [src]="getImageUrl()" alt="donate image" />
+      <div class="donate-card-document-wrapper">
+        <div *ngFor="let attachment of contribution.attachments">
+          <div (click)="openFile(attachment)" class="donate-card-document">
+            <i class="far fa-file-alt"></i>
+            {{ attachment.caption ? attachment.caption : attachment.name }}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</a>

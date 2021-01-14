@@ -26,7 +26,12 @@ export class DonateCardComponent implements OnInit {
     return SERVER + this.contribution.image.url;
   }
 
-  onClick() {
-    // contribution.collapased = !contribution.collapased;
+  onClick($event) {
+    // $event.stopPropagation();
+    $event.preventDefault();
+  }
+
+  getDonationUrl() {
+    return '/donate?id=' + this.contribution.id;
   }
 }

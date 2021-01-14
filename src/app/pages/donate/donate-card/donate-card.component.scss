@@ -60,3 +60,9 @@
     margin-right: 0.5rem;
   }
 }
+
+.donate-disable-anchor {
+  &:hover {
+    text-decoration: none;
+  }
+}
