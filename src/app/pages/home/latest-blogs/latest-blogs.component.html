@@ -5,11 +5,13 @@
   <div class="blog-posts">
     <div class="row">
       <div class="col" *ngFor="let blogPost of blogPosts">
-        <div class="blog-post">
-          <img [src]="getImgUrl(blogPost)" width="370" height="240" />
-          <h4>{{ blogPost.title }}</h4>
-          <p>{{ getSummaryText(blogPost) }}</p>
-        </div>
+        <a class="blog-post-anchor" [href]="blogPost.blogUrl">
+          <div class="blog-post">
+            <img [src]="blogPost.image" width="370" height="240" />
+            <h4>{{ blogPost.title }}</h4>
+            <p>{{ blogPost.summary }}</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>

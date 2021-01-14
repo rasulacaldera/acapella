@@ -15,18 +15,14 @@ export class LatestBlogsComponent implements OnInit {
   ngOnInit() {
     this.blogService.getLatestBlogs(3).subscribe(res => {
       this.blogPosts = res;
+      this.blogPosts = this.blogPosts.map(blog => {
+        return {
+          title: blog.title,
+          image: SERVER + blog.images[0].url,
+          blogUrl: '/blog?id=' + blog.id,
+          summary: blog.summary.trim().slice(0, 500) + '...'
+        };
+      });
     });
-  }
-
-  getImageSrc(blog) {
-    return blog.img;
-  }
-
-  getImgUrl(blogPost) {
-    return SERVER + blogPost.images[0].url;
-  }
-
-  getSummaryText(blogPost) {
-    return blogPost.summary.trim().slice(0, 500) + '...';
   }
 }

@@ -6,6 +6,7 @@ import { DonateComponent } from './donate/donate.component';
 import { BuyComponent } from './buy/buy.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'donate', component: DonateComponent },
   { path: 'buy', component: BuyComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  { path: 'terms-and-conditions', component: TermsAndConditionsComponent }
+  { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
+  { path: 'blog', component: BlogComponent }
 ];
 
 @NgModule({
