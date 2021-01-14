@@ -11,7 +11,9 @@ export class BlogService {
   constructor(private http: HttpClientService) {}
 
   getLatestBlogs(limit) {
-    return this.http.get(this.BLOG_SERVICE + '?_sort=id:DESC&_limit=' + limit);
+    return this.http.get(
+      this.BLOG_SERVICE + '?active_eq=true&_sort=id:DESC&_limit=' + limit
+    );
   }
 
   getBlogById(id) {
