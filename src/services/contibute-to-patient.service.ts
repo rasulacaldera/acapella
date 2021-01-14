@@ -13,4 +13,10 @@ export class ContibuteToPatientService {
   getAllActivePatientContributions() {
     return this.http.get(this.CONTRIBUTION_SERVICE + '?active_eq=true');
   }
+
+  getActivePatientContributionById(id) {
+    return this.http.get(
+      this.CONTRIBUTION_SERVICE + '?active_eq=true&id_eq=' + id
+    );
+  }
 }
