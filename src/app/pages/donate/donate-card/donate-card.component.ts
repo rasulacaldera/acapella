@@ -27,7 +27,6 @@ export class DonateCardComponent implements OnInit {
   }
 
   onClick($event) {
-    // $event.stopPropagation();
     $event.preventDefault();
   }
 
