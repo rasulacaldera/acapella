@@ -11,6 +11,8 @@ export class VideoLibraryService {
   constructor(private http: HttpClientService) {}
 
   getLatestVideos(limit) {
-    return this.http.get(this.VIDEOS_SERVICE + '?_limit=' + limit);
+    return this.http.get(
+      this.VIDEOS_SERVICE + '?_sort=id:DESC&_limit=' + limit
+    );
   }
 }
