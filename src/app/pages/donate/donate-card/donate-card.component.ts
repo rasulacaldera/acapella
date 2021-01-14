@@ -37,4 +37,12 @@ export class DonateCardComponent implements OnInit {
   navigate(url) {
     window.open(url, '_blank');
   }
+
+  getDonationProgress() {
+    let completedPercentage =
+      (this.contribution.current_donations / this.contribution.target) * 100;
+    return {
+      width: completedPercentage + '%'
+    };
+  }
 }
