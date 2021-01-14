@@ -1,4 +1,5 @@
-<div *ngIf="videoSources.length > 0" class="recent-videos">
+<loader *ngIf="loading"></loader>
+<div *ngIf="!loading && videoSources.length > 0" class="recent-videos">
   <div *ngFor="let videoSource of videoSources" class="videos-container">
     <iframe
       width="560"

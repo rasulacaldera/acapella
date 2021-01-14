@@ -9,6 +9,7 @@ import { VideoLibraryService } from 'src/services/video-library.service';
 })
 export class VideoLibraryComponent implements OnInit {
   videoSources: any = [];
+  loading: boolean = false;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -16,14 +17,21 @@ export class VideoLibraryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.videoLibraryService.getLatestVideos(9).subscribe(res => {
-      this.videoSources = res;
-      this.videoSources = this.videoSources.map(source => {
-        return {
-          url: source.url
-        };
-      });
-    });
+    this.loading = true;
+    this.videoLibraryService.getLatestVideos(9).subscribe(
+      res => {
+        this.videoSources = res;
+        this.videoSources = this.videoSources.map(source => {
+          return {
+            url: source.url
+          };
+        });
+        this.loading = false;
+      },
+      error => {
+        this.loading = false;
+      }
+    );
   }
 
   getSafeUrl({ url }) {
