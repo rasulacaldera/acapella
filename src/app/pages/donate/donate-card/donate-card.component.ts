@@ -33,4 +33,8 @@ export class DonateCardComponent implements OnInit {
   getDonationUrl() {
     return '/donate?id=' + this.contribution.id;
   }
+
+  navigate(url) {
+    window.open(url, '_blank');
+  }
 }

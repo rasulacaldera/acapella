@@ -15,6 +15,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VideoLibraryComponent } from './home/video-library/video-library.component';
 import { DonateCardComponent } from './donate/donate-card/donate-card.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DonateCardComponent } from './donate/donate-card/donate-card.component'
     WhoAreWeComponent,
     LatestBlogsComponent,
     VideoLibraryComponent,
-    DonateCardComponent
+    DonateCardComponent,
+    TermsAndConditionsComponent
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule, ReactiveFormsModule]
 })
