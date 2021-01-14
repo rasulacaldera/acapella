@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SERVER } from 'src/environments/environment';
+import { BlogService } from 'src/services/blog.service';
 
 @Component({
   selector: 'latest-blogs',
@@ -6,25 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./latest-blogs.component.scss']
 })
 export class LatestBlogsComponent implements OnInit {
-  blogPosts: any[] = [];
+  blogPosts: any = [];
 
-  constructor() {}
+  constructor(private blogService: BlogService) {}
 
   ngOnInit() {
-    let sampleBlog = {
-      img: 'https://picsum.photos/370/240',
-      title: 'Blog Title',
-      post:
-        'blog text blog text blog text blog text blog text blog text blog text blog text blog text blog text ' +
-        'blog text blog text blog text blog text blog text blog text blog text blog text blog text blog text '
-    };
-
-    for (var i = 0; i < 3; i++) {
-      this.blogPosts.push(sampleBlog);
-    }
+    this.blogService.getLatestBlogs(3).subscribe(res => {
+      this.blogPosts = res;
+    });
   }
 
   getImageSrc(blog) {
     return blog.img;
+  }
+
+  getImgUrl(blogPost) {
+    return SERVER + blogPost.images[0].url;
+  }
+
+  getSummaryText(blogPost) {
+    return blogPost.summary.trim().slice(0, 500) + '...';
   }
 }
