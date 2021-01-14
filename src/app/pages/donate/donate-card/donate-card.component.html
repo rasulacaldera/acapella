@@ -1,5 +1,5 @@
 <a
-  [href]="getDonationUrl()"
+  [href]="contribution.donationUrl"
   (click)="onClick($event)"
   class="donate-disable-anchor"
 >
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="donate-card-image">
-      <img [src]="getImageUrl()" alt="donate image" />
+      <img [src]="contribution.image" alt="donate image" />
       <div *ngIf="!contribution.target_reached" class="progress">
         <div
           class="progress-bar progress-bar-success"

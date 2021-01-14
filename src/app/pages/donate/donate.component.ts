@@ -31,7 +31,7 @@ export class DonateComponent implements OnInit {
       .getActivePatientContributionById(id)
       .subscribe(
         res => {
-          this.patientContribution = res;
+          this.processAndSetDonations(res);
           if (this.patientContribution.length == 0) {
             this.toastr.error('Specific Donation no longer exists');
             this.loadAllDonations();
@@ -47,11 +47,27 @@ export class DonateComponent implements OnInit {
   loadAllDonations() {
     this.contibuteToPatientService.getAllActivePatientContributions().subscribe(
       res => {
-        this.patientContribution = res;
+        this.processAndSetDonations(res);
       },
       error => {
         this.toastr.error('Error fetching Contributions');
       }
     );
+  }
+
+  processAndSetDonations(donations) {
+    this.patientContribution = donations.map(donation => {
+      return {
+        title: donation.title,
+        description: donation.description,
+        image: SERVER + donation.image.url,
+        attachments: donation.attachments,
+        patient_accounts: donation.patient_accounts,
+        current_donations: donation.current_donations,
+        target: donation.target,
+        target_reached: donation.target_reached,
+        donationUrl: '/donate?id=' + donation.id
+      };
+    });
   }
 }
