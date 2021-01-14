@@ -63,6 +63,13 @@
   &-tc {
     margin: 0 0 10px 15px;
   }
+
+  &-target-reached {
+    font-size: 100px;
+    transform: rotate(328deg);
+    opacity: 0.5;
+    color: lightgrey;
+  }
 }
 
 .donate-disable-anchor {

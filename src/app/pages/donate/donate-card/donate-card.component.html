@@ -4,6 +4,9 @@
   class="donate-disable-anchor"
 >
   <div class="donate-card">
+    <div *ngIf="contribution.target_reached" class="donate-card-target-reached">
+      TARGET REACHED
+    </div>
     <div class="donate-card-info">
       <div class="donate-card-title">{{ contribution.title }}</div>
       <div class="donate-card-description">
