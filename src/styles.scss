@@ -21,12 +21,12 @@ body {
   background: #f5f7f9;
 }
 .bg-purple {
-  background: #cacaff;
+  background: #9edfff;
 }
 .title-separator {
   width: 70px;
   height: 3px;
-  background: #a3a3ff;
+  background: #3caff1;
 }
 p {
   color: #636363;
@@ -34,16 +34,62 @@ p {
 }
 
 .btn-outline-primary {
-  border-color: #a3a3ff;
-  color: #a3a3ff;
+  border-color: #3caff1;
+  color: #3caff1;
   transition: all 0.3s ease;
   &:hover,
   &:focus {
-    background: #a3a3ff;
-    border-color: #a3a3ff;
+    background: #3caff1;
+    border-color: #3caff1;
   }
 }
 .btn-lg {
   min-width: 200px;
   padding: 15px 40px;
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1340px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1540px;
+  }
+}
+
+.box-200 {
+  width: 200px;
+  height: 200px;
+}
+
+.progress {
+  height: 30px;
+}
+
+footer {
+  background: #374279;
+  color: #fff;
+  p {
+    color: #fff;
+  }
+}
+
+.text-dark-blue {
+  color: #2972ce;
+}
+
+.donate-btn {
+  background: #2972ce;
+  border-color: #2972ce;
 }
