@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    <div class="donate-card-image">
+    <div class="donate-card-image text-center">
       <img [src]="contribution.image" alt="donate image" />
       <div class="progress">
         <div
@@ -51,6 +51,7 @@
           {{ this.contribution.target }}
         </div>
       </div>
+
       <div
         *ngIf="!contribution.target_reached"
         class="donate-card-document-wrapper"
