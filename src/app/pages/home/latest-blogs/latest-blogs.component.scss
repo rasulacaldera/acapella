@@ -8,9 +8,13 @@
 }
 
 .blog-post {
-  padding: 10px;
+  padding: 0px;
   border-radius: 4px;
   box-shadow: 0px 0px 18px 0px rgba(70, 70, 70, 0.12);
+  background: #fff;
+  p {
+    line-height: 1.5;
+  }
 }
 
 .blog-post-anchor {

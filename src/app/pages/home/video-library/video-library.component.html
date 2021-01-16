@@ -1,13 +1,30 @@
-<loader *ngIf="loading"></loader>
-<div *ngIf="!loading && videoSources.length > 0" class="recent-videos">
-  <div *ngFor="let videoSource of videoSources" class="videos-container">
-    <iframe
-      width="560"
-      height="315"
-      [src]="getSafeUrl(videoSource)"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div
+        class="d-flex flex-row align-items-center justify-content-center mb-50"
+      >
+        <div class="title-separator mr-3"></div>
+        <h3 class="mb-0 font-weight-bold">Our Gallery</h3>
+        <div class="title-separator ml-3"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" *ngIf="loading">
+      <loader></loader>
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading && videoSources.length > 0">
+    <div *ngFor="let videoSource of videoSources" class="col-md-4">
+      <iframe
+        width="100%"
+        height="315"
+        [src]="getSafeUrl(videoSource)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </div>

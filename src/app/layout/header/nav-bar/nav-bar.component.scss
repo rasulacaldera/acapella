@@ -2,8 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.logo-wrapper {
+  width: 190px;
+  z-index: 1;
+  .logo-inner {
+    position: absolute;
+    padding: 0 25px;
+    background-color: #ffffff;
+    top: -10px;
+  }
   img {
-    width: 70px;
+    width: 110px;
     object-fit: contain;
   }
 }
@@ -12,9 +22,17 @@
   justify-content: center;
   width: fit-content;
   height: fit-content;
+  padding: 0;
 }
 
 .nav-link {
   padding: 1.5rem 2rem;
   color: #a3a3ff;
+  transition: all 0.3s ease;
+  &:hover,
+  &:focus,
+  &.active {
+    background: #a3a3ff;
+    color: #ffffff;
+  }
 }
