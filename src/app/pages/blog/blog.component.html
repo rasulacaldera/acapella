@@ -1,9 +1,13 @@
-<loader *ngIf="loading"></loader>
-<div *ngIf="!loading">
-  <div *ngIf="!blog" class="blog-no-found">Blog not found</div>
-  <div *ngIf="blog" class="blog">
-    <h2>{{ blog.title }}</h2>
-    <img [src]="blog.img" alt="donate image" />
-    <p class="blog-body" [innerHtml]="getInnerHTML()"></p>
+<div class="bg-white py-100">
+  <div class="container">
+    <loader *ngIf="loading"></loader>
+    <div *ngIf="!loading">
+      <div *ngIf="!blog" class="blog-no-found">Blog not found</div>
+      <div *ngIf="blog">
+        <h2 class="mb-3">{{ blog.title }}</h2>
+        <img class="mb-3" [src]="blog.img" alt="donate image" />
+        <p class="blog-body" [innerHtml]="getInnerHTML()"></p>
+      </div>
+    </div>
   </div>
 </div>
