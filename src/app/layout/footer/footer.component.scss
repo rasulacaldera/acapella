@@ -1,11 +1,15 @@
 .footer {
-  background-color: #d5d5ff;
+  background-color: #ffffff;
+  color: #a3a3ff;
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  p {
+    color: #a3a3ff;
+  }
   i {
-    color: black;
+    color: #a3a3ff;
     font-size: 1.5rem;
     margin-left: 10px;
     + i {

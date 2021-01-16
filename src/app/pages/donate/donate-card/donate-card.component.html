@@ -8,9 +8,11 @@
       TARGET REACHED
     </div>
     <div class="donate-card-info">
-      <div class="donate-card-title">{{ contribution.title }}</div>
+      <div class="donate-card-title text-dark font-weight-bold mb-3">
+        {{ contribution.title }}
+      </div>
       <div class="donate-card-description">
-        <p [innerHtml]="getInnerHTML()"></p>
+        <div [innerHtml]="getInnerHTML()"></div>
       </div>
       <div
         *ngIf="!contribution.target_reached"
@@ -41,7 +43,7 @@
       <img [src]="contribution.image" alt="donate image" />
       <div class="progress">
         <div
-          class="progress-bar progress-bar-success"
+          class="progress-bar progress-bar-striped bg-success"
           role="progressbar"
           [ngStyle]="getDonationProgress()"
         >

@@ -27,12 +27,12 @@
 
 .nav-link {
   padding: 1.5rem 2rem;
-  color: #a3a3ff;
+  color: #ffffff;
   transition: all 0.3s ease;
   &:hover,
   &:focus,
   &.active {
-    background: #a3a3ff;
-    color: #ffffff;
+    background: #ffffff;
+    color: #a3a3ff;
   }
 }
