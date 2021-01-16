@@ -1,8 +1,4 @@
 .donation-page {
-  div {
-    margin-top: 1.5rem;
-  }
-
   &:nth-child(even) {
     //TODO FIX
     flex-direction: row-reverse;

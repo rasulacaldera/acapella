@@ -1,6 +1,20 @@
 <loader *ngIf="loading"></loader>
-<div *ngIf="!loading" class="container py-4 donation-page">
-  <div *ngFor="let contribution of patientContribution">
-    <donate-card [contribution]="contribution"></donate-card>
+<div *ngIf="!loading" class="py-100 donation-page bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div
+          class="d-flex flex-row align-items-center justify-content-center mb-50"
+        >
+          <div class="title-separator mr-3"></div>
+          <h3 class="mb-0 font-weight-bold">Donatations</h3>
+          <div class="title-separator ml-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let contribution of patientContribution">
+      <donate-card [contribution]="contribution"></donate-card>
+    </div>
   </div>
 </div>
