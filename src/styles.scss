@@ -2,3 +2,45 @@ html,
 body {
   height: 100%;
 }
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.py-100 {
+  padding: 100px 0;
+}
+.pb-100 {
+  padding-bottom: 100px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.py-50 {
+  padding: 50px 0;
+}
+.bg-gray {
+  background: #f5f7f9;
+}
+.title-separator {
+  width: 70px;
+  height: 3px;
+  background: #a3a3ff;
+}
+p {
+  color: #636363;
+  line-height: 2;
+}
+
+.btn-outline-primary {
+  border-color: #a3a3ff;
+  color: #a3a3ff;
+  transition: all 0.3s ease;
+  &:hover,
+  &:focus {
+    background: #a3a3ff;
+    border-color: #a3a3ff;
+  }
+}
+.btn-lg {
+  min-width: 200px;
+  padding: 15px 40px;
+}
