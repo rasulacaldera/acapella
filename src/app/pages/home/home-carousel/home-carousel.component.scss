@@ -6,12 +6,41 @@
 }
 
 .carousel {
-  top: -100px;
+  top: -70px;
+  @media screen and (min-width: 768px) {
+    top: -100px;
+  }
   .carousel-inner {
     .carousel-item {
       &.active {
+        .overlay {
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+          }
+          &:hover,
+          &:focus {
+            + img {
+              // transform: scale(1.5);
+            }
+          }
+        }
         img {
           height: 750px;
+          //transition: all 1s ease;
+          -webkit-animation: zoomin 5s ease;
+          animation: zoomin 5s ease;
+          animation-fill-mode: forwards;
+          -webkit-animation-fill-mode: forwards;
+          animation-iteration-count: 1;
         }
       }
     }
@@ -22,16 +51,59 @@
   top: 50%;
   left: 46%;
   transform: translate(-50%, -50%);
-  text-align: left;
+  text-align: center;
   color: #ffffff;
   padding: 20px 30px;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 0px 18px 0px rgba(70, 70, 70, 0.12);
+  z-index: 2;
   h2 {
-    font-size: 64px;
+    font-size: 54px;
+    color: #ffffff;
+    -webkit-animation: text-slide 4s cubic-bezier(0.5, 0.5, 0, 1);
+    animation: text-slide 4s cubic-bezier(0.5, 0.5, 0, 1);
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
   }
   p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
+    color: #ffffff;
+    -webkit-animation: text-slide 4s cubic-bezier(0.5, 0.5, 0, 1);
+    animation: text-slide 4s cubic-bezier(0.5, 0.5, 0, 1);
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+  .donate-btn {
+    -webkit-animation: text-slide 4s cubic-bezier(0.5, 0.5, 0, 1);
+    animation: text-slide 4s cubic-bezier(0.5, 0.5, 0, 1);
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+}
+
+@keyframes zoomin {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes text-slide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
   }
 }
