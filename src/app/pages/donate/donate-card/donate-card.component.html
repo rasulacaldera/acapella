@@ -43,7 +43,7 @@
       <img [src]="contribution.image" alt="donate image" />
       <div class="progress">
         <div
-          class="progress-bar progress-bar-striped bg-success"
+          class="progress-bar progress-bar-striped bg-success progress-bar-animated"
           role="progressbar"
           [ngStyle]="getDonationProgress()"
         >
@@ -58,8 +58,10 @@
       >
         <div *ngFor="let attachment of contribution.attachments">
           <div (click)="openFile(attachment)" class="donate-card-document">
-            <i class="far fa-file-alt"></i>
-            {{ attachment.caption ? attachment.caption : attachment.name }}
+            <i class="far fa-file-alt donate-card-document-icon"></i>
+            <div class="donate-card-document-title">
+              {{ attachment.caption ? attachment.caption : attachment.name }}
+            </div>
           </div>
         </div>
       </div>
